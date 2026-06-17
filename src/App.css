@@ -1,0 +1,28 @@
+.app {
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 60px 40px;
+  margin: 24px 0;
+  cursor: pointer;
+  font-size: 48px;
+  background: #fff;
+}
+
+.card:hover {
+  background: #f9f9f9;
+}
+
+button {
+  padding: 10px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
