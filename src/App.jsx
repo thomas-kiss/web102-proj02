@@ -3,27 +3,44 @@ import cards from './data/cards'
 import Flashcard from './components/Flashcard'
 import './App.css'
 
-
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   function nextCard() {
-    let next
-    do {
-      next = Math.floor(Math.random() * cards.length)
-    } while (next === currentIndex)
-    setCurrentIndex(next)
+    if (currentIndex < cards.length - 1) setCurrentIndex(currentIndex + 1)
+  }
+
+  function prevCard() {
+    if (currentIndex > 0) setCurrentIndex(currentIndex - 1)
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Korean Colors</h1>
-      <p>Learn how to say colors in Korean</p>
-      <p>Total cards: {cards.length}</p>
+      <p className="subtitle">Learn how to say colors in Korean</p>
+      <p className="card-count">Card {currentIndex + 1} / {cards.length}</p>
 
-      <Flashcard key={currentIndex} card={cards[currentIndex]} />
-      
-      <button onClick={nextCard}>Next</button>
+      <Flashcard
+        key={currentIndex}
+        card={cards[currentIndex]}
+      />
+
+      <div className="nav-row">
+        <button
+          className="nav-btn"
+          onClick={prevCard}
+          disabled={currentIndex === 0}
+        >
+          ← Back
+        </button>
+        <button
+          className="nav-btn"
+          onClick={nextCard}
+          disabled={currentIndex === cards.length - 1}
+        >
+          Next →
+        </button>
+      </div>
     </div>
   )
 }
