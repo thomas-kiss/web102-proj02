@@ -34,10 +34,10 @@ function Flashcard({ card }) {
       </div>
 
       {feedback === 'correct' && (
-        <p className="feedback-msg correct-msg">✓ Correct!</p>
+        <p className="feedback-msg correct-msg">Correct!</p>
       )}
       {feedback === 'incorrect' && (
-        <p className="feedback-msg incorrect-msg">✗ Not quite — try again!</p>
+        <p className="feedback-msg incorrect-msg">Wrong — try again!</p>
       )}
 
       <div className="guess-row">
